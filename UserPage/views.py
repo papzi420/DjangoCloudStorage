@@ -4,9 +4,9 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login as auth_login
 from django.core.urlresolvers import reverse
 from .models import UserStorageInfo
-from FileServer import settings
+from DjangoCloudStorage import settings
 from os import listdir
-from os.path import isdir, join
+from os.path import isdir, join, basename, getsize, normpath
 # Create your views here.
 
 
@@ -21,11 +21,22 @@ def userIndex(request, path=""):
     print(location)
     location = join(location, path)
     print(location)
+    if not isdir(location):
+        file = open(location, "r")
+        response = HttpResponse(file, content_type='application/zip')
+        file.close()
+        response["Content-Disposition"] = 'attachment; filename=' + basename(location)
+        return response
     if not path == "":
         files.append({"name": "..", "size": "420", "isFolder": True})
     for file in listdir(location):
-        files.append({"name": file, "size": "420", "isFolder": isdir(join(location, file))})
-    return render(request, "User/index.html", context={"files": files})
+        dir = isdir(join(location, file))
+        if dir:
+            files.append({"name": file, "size": getsize(join(location, file)), "isFolder": True})
+        else:
+            files.append({"name": file, "size": "0", "isFolder": False})
+    print(path)
+    return render(request, "User/index.html", context={"files": files, "currentPath":  normpath(path) + "/"})
 
 
 def login(request):

@@ -15,9 +15,9 @@
             <ul>
             {% for file in files %}
             {% if file.isFolder %}
-                <li><a href="{% url "user:files" path=file.name %}">{{ file.name }}</a></li>
+                <li><a href="{% url "user:files" path="" %}{{currentPath}}{{file.name}}">{{ file.name }}</a></li>
             {% else %}
-                <li>{{ file.name }} - {{ file.size }}KB</li>
+                <li><a href="{% url "user:files" path="" %}{{currentPath}}{{file.name}}">{{ file.name }} - {{ file.size }}KB</a></li>
             {% endif %}
             {% endfor %}
             </ul>
