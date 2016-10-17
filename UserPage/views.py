@@ -17,6 +17,7 @@ def index(request):
 @login_required
 def userIndex(request, path=""):
     files = []
+    folders = []
     location = join(settings.STORAGE_LOCATION, UserStorageInfo.objects.get(user=request.user).folderName)
     print(location)
     location = join(location, path)
@@ -28,15 +29,17 @@ def userIndex(request, path=""):
         response["Content-Disposition"] = 'attachment; filename=' + basename(location)
         return response
     if not path == "":
-        files.append({"name": "..", "size": "420", "isFolder": True})
+        folders.append({"name": ".."})
     for file in listdir(location):
         dir = isdir(join(location, file))
         if dir:
-            files.append({"name": file, "size": getsize(join(location, file)), "isFolder": True})
+            folders.append({"name": file})
         else:
-            files.append({"name": file, "size": "0", "isFolder": False})
+            files.append({"name": file, "size": getsize(join(location, file))/1000})
     print(path)
-    return render(request, "User/index.html", context={"files": files, "currentPath":  normpath(path) + "/"})
+    folders = sorted(folders, key=lambda k: k['name']);
+    files = sorted(files, key=lambda k: k['name']);
+    return render(request, "User/index.html", context={"files": files, "folders": folders, "currentPath":  normpath(path) + "/"})
 
 
 def login(request):

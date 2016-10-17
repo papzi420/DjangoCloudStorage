@@ -2,26 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+	{% load static %}
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+    <title>Banan</title>
 </head>
 <body>
     <div class="container">
-        <div class="col-md-12">
-            <ul>
-            {% for file in files %}
-            {% if file.isFolder %}
-                <li><a href="{% url "user:files" path="" %}{{currentPath}}{{file.name}}">{{ file.name }}</a></li>
-            {% else %}
-                <li><a href="{% url "user:files" path="" %}{{currentPath}}{{file.name}}">{{ file.name }} - {{ file.size }}KB</a></li>
-            {% endif %}
+		<div class="col-md-12">
+            <p>Folders</p>
+        </div>
+		<div class="folder-list col-md-12">
+            {% for folder in folders %}
+			<div class="folder col-md-2" foldername="{{folder.name}}">
+				<div class="body">
+					{{ folder.name }}
+				</div>
+			</div>
+            {% endfor%}
+		</div>
+		<div class="col-md-12">
+            <p>Files</p>
+        </div>
+		<div class="file-list col-md-12">
+			{% for file in files %}
+            <div class="file col-md-2" filename="{{file.name}}">
+				<div class="body">
+					{{ filer.preview }}
+				</div>
+				<div class="head">
+					{{ file.name }}
+				</div>
+			</div>
             {% endfor %}
-            </ul>
         </div>
     </div>
+	<script src="{% static "js/main.js" %}"></script>
 </body>
 </html>

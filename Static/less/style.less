@@ -1,0 +1,90 @@
+@primaryColor: rgba(0, 0, 0, 0.0);
+@secondaryColor: rgba(66, 133, 244, 1.0);
+@folderIcon: "\e117";
+@backgroundColor: #EEEEEE;
+@typeSpacing: 10px;
+@itemSpacing: 5px;
+body {
+	background-color: @backgroundColor;
+	font-family: "roboto", sans-serif
+}
+
+.file-list {
+	margin-bottom: @typeSpacing;
+	.file {
+		padding: @itemSpacing;
+		cursor: pointer;
+		-webkit-user-select: none;       
+		-moz-user-select: none;
+		-ms-user-select: none;
+		.head {
+			padding: 10px 5px;
+			background: @primaryColor;
+			border-radius: 0px 0px 2px 2px;
+			font-family: "roboto";
+			transition: background-color 0.2s;
+		}
+		.body {
+			padding: 10px 5px;
+			border-color: @primaryColor;
+			border-style: solid;
+			border-width: 1px;
+			background-color: #FFFFFF;
+			box-shadow: 0px 0px 2px #888888;
+			transition: box-shadow 2s, border-color 0.2s;
+			height: 100px;
+			text-align: center;
+		}
+		&.active {
+			.head {
+				background-color: @secondaryColor;
+				color: white;
+				box-shadow: 0px 0px 6px #888888;
+			}
+			.body {
+				border-color: @secondaryColor;
+				box-shadow: 0px 0px 6px	 #888888;
+			}
+		}
+	}
+}
+
+.folder-list {
+	margin-bottom: @typeSpacing;
+	.folder {
+		padding: @itemSpacing;
+		cursor: pointer;
+		-webkit-user-select: none;       
+		-moz-user-select: none;
+		-ms-user-select: none;
+		.body {
+			padding: @itemSpacing;
+			border-color: @primaryColor;
+			border-style: solid;
+			border-width: 1px;
+			border-radius: 2px;
+			background-color: #FFFFFF;
+			box-shadow: 0px 0px 2px #888888;
+			transition: box-shadow 2s, border-color 0.2s;
+			vertical-align: middle;
+			&:before {
+				content: @folderIcon;
+				font-family: "Glyphicons Halflings";
+				color: @secondaryColor;
+				font-size: 17px;
+				padding-bottom: -2px;
+				margin-right: 10px;
+			}
+		}
+		&.active {
+			.body {
+				border-color: @secondaryColor;
+				background-color: @secondaryColor;
+				box-shadow: 0px 0px 10px #888888;
+				&:before {
+					color: #FFFFFF;
+				}
+			}
+		}
+	}
+}

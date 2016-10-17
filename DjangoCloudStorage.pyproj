@@ -38,6 +38,9 @@
     <Compile Include="UserPage\__init__.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Static\css\style.css" />
+    <Content Include="Static\js\main.js" />
+    <Content Include="Static\less\style.less" />
     <Content Include="Storage\admin\Important Document.txt" />
     <Content Include="Storage\admin\lol\banan.txt" />
     <Content Include="Templates\User\index.html" />
@@ -45,6 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DjangoCloudStorage\" />
+    <Folder Include="Static\" />
+    <Folder Include="Static\css\" />
+    <Folder Include="Static\js\" />
+    <Folder Include="Static\less\" />
     <Folder Include="Storage\" />
     <Folder Include="Storage\admin" />
     <Folder Include="Storage\admin\lol" />
