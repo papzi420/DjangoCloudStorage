@@ -4,6 +4,8 @@
 @backgroundColor: #EEEEEE;
 @typeSpacing: 10px;
 @itemSpacing: 5px;
+@colorTransition: 0.1s;
+@shadowTranition: 2s;
 body {
 	background-color: @backgroundColor;
 	font-family: "roboto", sans-serif
@@ -22,7 +24,7 @@ body {
 			background: @primaryColor;
 			border-radius: 0px 0px 2px 2px;
 			font-family: "roboto";
-			transition: background-color 0.2s;
+			transition: box-shadow @shadowTranition, background-color @colorTransition, color @colorTransition;
 		}
 		.body {
 			padding: 10px 5px;
@@ -31,7 +33,7 @@ body {
 			border-width: 1px;
 			background-color: #FFFFFF;
 			box-shadow: 0px 0px 2px #888888;
-			transition: box-shadow 2s, border-color 0.2s;
+			transition: box-shadow @shadowTranition, border-color @colorTransition, color @colorTransition;
 			height: 100px;
 			text-align: center;
 		}
@@ -43,7 +45,7 @@ body {
 			}
 			.body {
 				border-color: @secondaryColor;
-				box-shadow: 0px 0px 6px	 #888888;
+				box-shadow: 0px 0px 6px #888888;
 			}
 		}
 	}
@@ -65,7 +67,7 @@ body {
 			border-radius: 2px;
 			background-color: #FFFFFF;
 			box-shadow: 0px 0px 2px #888888;
-			transition: box-shadow 2s, border-color 0.2s;
+			transition: box-shadow @shadowTranition, box-shadow 2s, border-color @colorTransition, background-color @colorTransition, color @colorTransition;
 			vertical-align: middle;
 			&:before {
 				content: @folderIcon;
@@ -80,7 +82,8 @@ body {
 			.body {
 				border-color: @secondaryColor;
 				background-color: @secondaryColor;
-				box-shadow: 0px 0px 10px #888888;
+				box-shadow: 0px 0px 6px #888888;
+				color: #FFFFFF;
 				&:before {
 					color: #FFFFFF;
 				}

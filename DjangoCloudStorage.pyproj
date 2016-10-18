@@ -32,6 +32,9 @@
     <Compile Include="UserPage\migrations\0002_auto_20161015_1304.py" />
     <Compile Include="UserPage\migrations\__init__.py" />
     <Compile Include="UserPage\models.py" />
+    <Compile Include="UserPage\securityUtils.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="UserPage\tests.py" />
     <Compile Include="UserPage\urls.py" />
     <Compile Include="UserPage\views.py" />

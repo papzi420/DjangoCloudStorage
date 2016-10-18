@@ -1,1 +1,79 @@
-body{background-color:#eee;font-family:roboto,sans-serif}.file-list{margin-bottom:10px}.file-list .file{padding:5px;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}.file-list .file .head{padding:10px 5px;background:rgba(0,0,0,0);border-radius:0 0 2px 2px;font-family:roboto;transition:background-color .2s}.file-list .file .body{padding:10px 5px;border-color:rgba(0,0,0,0);border-style:solid;border-width:1px;background-color:#FFF;box-shadow:0 0 2px #888;transition:box-shadow 2s,border-color .2s;height:100px;text-align:center}.file-list .file.active .head{background-color:#4285f4;color:#fff;box-shadow:0 0 6px #888}.file-list .file.active .body{border-color:#4285f4;box-shadow:0 0 6px #888}.folder-list{margin-bottom:10px}.folder-list .folder{padding:5px;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}.folder-list .folder .body{padding:5px;border-color:rgba(0,0,0,0);border-style:solid;border-width:1px;border-radius:2px;background-color:#FFF;box-shadow:0 0 2px #888;transition:box-shadow 2s,border-color .2s;vertical-align:middle}.folder-list .folder .body:before{content:"\e117";font-family:"Glyphicons Halflings";color:#4285f4;font-size:17px;padding-bottom:-2px;margin-right:10px}.folder-list .folder.active .body{border-color:#4285f4;background-color:#4285f4;box-shadow:0 0 10px #888}.folder-list .folder.active .body:before{color:#FFF}
+body {
+  background-color: #eeeeee;
+  font-family: "roboto", sans-serif;
+}
+.file-list {
+  margin-bottom: 10px;
+}
+.file-list .file {
+  padding: 5px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.file-list .file .head {
+  padding: 10px 5px;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 0px 0px 2px 2px;
+  font-family: "roboto";
+  transition: box-shadow 2s, background-color 0.1s, color 0.1s;
+}
+.file-list .file .body {
+  padding: 10px 5px;
+  border-color: rgba(0, 0, 0, 0);
+  border-style: solid;
+  border-width: 1px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 2px #888888;
+  transition: box-shadow 2s, border-color 0.1s, color 0.1s;
+  height: 100px;
+  text-align: center;
+}
+.file-list .file.active .head {
+  background-color: #4285f4;
+  color: white;
+  box-shadow: 0px 0px 6px #888888;
+}
+.file-list .file.active .body {
+  border-color: #4285f4;
+  box-shadow: 0px 0px 6px #888888;
+}
+.folder-list {
+  margin-bottom: 10px;
+}
+.folder-list .folder {
+  padding: 5px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.folder-list .folder .body {
+  padding: 5px;
+  border-color: rgba(0, 0, 0, 0);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 2px #888888;
+  transition: box-shadow 2s, box-shadow 2s, border-color 0.1s, background-color 0.1s, color 0.1s;
+  vertical-align: middle;
+}
+.folder-list .folder .body:before {
+  content: "\e117";
+  font-family: "Glyphicons Halflings";
+  color: #4285f4;
+  font-size: 17px;
+  padding-bottom: -2px;
+  margin-right: 10px;
+}
+.folder-list .folder.active .body {
+  border-color: #4285f4;
+  background-color: #4285f4;
+  box-shadow: 0px 0px 6px #888888;
+  color: #FFFFFF;
+}
+.folder-list .folder.active .body:before {
+  color: #FFFFFF;
+}

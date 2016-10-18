@@ -16,7 +16,7 @@ $(function () {
 		var filename = $(event.delegateTarget).attr("filename");
 		console.log(filename);
 		navigate(filename);
-	});
+	})
 	
 	$(".folder").click(function (event) {
 		$(".file").removeClass("active");
@@ -35,4 +35,6 @@ $(function () {
 		$(".file").removeClass("active");
 		$(".folder").removeClass("active");
 	});
+
+	
 });
