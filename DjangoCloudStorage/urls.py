@@ -19,5 +19,6 @@ from UserPage import views
 urlpatterns = [
 	url(r'^admin/', admin.site.urls),
 	url(r'^$', views.index, name='index'),
-	url(r'^user/', include('UserPage.urls', namespace="user"))
+	url(r'^user/', include('UserPage.urls', namespace="user")),
+	url(r'^api/', include('Api.urls', namespace="api"))
 ]

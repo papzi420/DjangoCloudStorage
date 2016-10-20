@@ -40,7 +40,8 @@ INSTALLED_APPS = [
 	'django.contrib.sessions',
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
-	'UserPage.apps.UserPageConfig'
+	'UserPage.apps.UserPageConfig',
+	'Api.apps.ApiConfig',
 ]
 
 MIDDLEWARE = [
@@ -101,11 +102,13 @@ AUTH_PASSWORD_VALIDATORS = [
 		'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
 	},
 ]
-
 STATICFILES_DIRS = [
 	os.path.join(BASE_DIR, "Static"),
 ]
-
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 

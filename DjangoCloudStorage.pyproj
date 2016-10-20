@@ -21,6 +21,16 @@
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Api\admin.py" />
+    <Compile Include="Api\apps.py" />
+    <Compile Include="Api\migrations\__init__.py" />
+    <Compile Include="Api\models.py" />
+    <Compile Include="Api\tests.py" />
+    <Compile Include="Api\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\views.py" />
+    <Compile Include="Api\__init__.py" />
     <Compile Include="DjangoCloudStorage\settings.py" />
     <Compile Include="DjangoCloudStorage\urls.py" />
     <Compile Include="DjangoCloudStorage\wsgi.py" />
@@ -41,15 +51,20 @@
     <Compile Include="UserPage\__init__.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="README.md" />
     <Content Include="Static\css\style.css" />
     <Content Include="Static\js\main.js" />
+    <Content Include="Static\js\main.jsx" />
     <Content Include="Static\less\style.less" />
     <Content Include="Storage\admin\Important Document.txt" />
     <Content Include="Storage\admin\lol\banan.txt" />
     <Content Include="Templates\User\index.html" />
+    <Content Include="Templates\User\index.old.html" />
     <Content Include="Templates\User\login.html" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Api\" />
+    <Folder Include="Api\migrations\" />
     <Folder Include="DjangoCloudStorage\" />
     <Folder Include="Static\" />
     <Folder Include="Static\css\" />
